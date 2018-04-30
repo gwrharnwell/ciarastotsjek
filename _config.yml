@@ -1,2 +1,4 @@
 baseurl: /ciarastots
 exclude: ['README.md']
+collections:
+  gallery:
