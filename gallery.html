@@ -10,11 +10,15 @@ images:
         <div class="row">
 
             <div class="grid">
-                {% for image in page.images %}
-                <div class="grid-item">   
-                    <img src="{{ image.url }}"> 
-                </div>
+
+                {% for image in site.static_files %}
+                    {% if image.path contains 'gallery' %}
+                        <div class="grid-item">   
+                            <img src="../{{ image.path }}" alt="image" />
+                        </div>
+                    {% endif %}
                 {% endfor %}
+
             </div>
         </div>
     </div>
@@ -22,3 +26,4 @@ images:
 </section>
 
 {% include contact.html %}
+
